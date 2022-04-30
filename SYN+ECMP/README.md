@@ -92,6 +92,14 @@ for i in range(6):
 
 我们使用同样的攻击工具`hping3`，让`h1`对`h2`发动`SYN-Flood`的`DDoS`攻击，通过监控数据包的流量来查看防御效果，由于个人电脑内存限制，我们只进行**百万数据包**级别的攻击测试。
 
+在`h1`终端使用如下攻击命令：
+
+```bash
+hping3 -q -n -S -p 5001 --faster 10.0.6.2 
+```
+
+
+
 ### Result
 
 ![微信截图_20220429180843](https://personal-drawing-bed.oss-cn-beijing.aliyuncs.com/img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20220429180843.png)
