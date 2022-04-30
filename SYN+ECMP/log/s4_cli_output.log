@@ -1,0 +1,16 @@
+Obtaining JSON from switch...
+Done
+Control utility for runtime P4 table manipulation
+RuntimeCmd: Error: Table ipv4_lpm has no action drop
+RuntimeCmd: Error: Table ecmp_group_to_nhop has no action drop
+RuntimeCmd: Adding entry to lpm match table ipv4_lpm
+match key:           LPM-0a:00:01:01/32
+action:              set_nhop
+runtime data:        00:00:00:01:04:00	00:01
+Entry has been added with handle 0
+RuntimeCmd: Adding entry to lpm match table ipv4_lpm
+match key:           LPM-0a:00:06:02/32
+action:              set_nhop
+runtime data:        00:00:00:06:04:00	00:02
+Entry has been added with handle 1
+RuntimeCmd: 
