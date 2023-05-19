@@ -8,7 +8,7 @@
 
 ### SYN Defense
 
-基于P4的寄存器来对SYN进行计数，防御策略请阅读[SYN DEFENSE](https://github.com/dmucby/P4-Defense/tree/master/SYN%20%E9%98%B2%E6%B4%AA)，在此处我们进行对防御流表周期性的替换，让攻击者难以获取防御节点和防御策略，通过`P4-Utils`控制器来对交换机的流表进行随即替换。
+基于P4的寄存器来对SYN进行计数，防御策略请阅读[SYN DEFENSE](https://github.com/dmucby/P4-Defense/tree/master/SYN%20Flood%20Defence)，在此处我们进行对防御流表周期性的替换，让攻击者难以获取防御节点和防御策略，通过`P4-Utils`控制器来对交换机的流表进行随即替换。
 
 
 
