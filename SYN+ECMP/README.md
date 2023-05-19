@@ -63,7 +63,7 @@ table_add ecmp_group_to_nhop set_nhop 1 3 =>  00:00:00:05:01:00 5
 
 ### SYN-Defense
 
-核心代码与[SYN DEFENSE](https://github.com/dmucby/P4-Defense/tree/master/SYN%20%E9%98%B2%E6%B4%AA)类似，在此不再赘述。
+核心代码与[SYN DEFENSE](https://github.com/dmucby/P4-Defense/tree/master/SYN%20Flood%20Defence)类似，在此不再赘述。
 
 
 
