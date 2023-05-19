@@ -1,0 +1,3696 @@
+{
+  "header_types" : [
+    {
+      "name" : "scalars_0",
+      "id" : 0,
+      "fields" : [
+        ["hasReturned", 1, false],
+        ["cond", 1, false],
+        ["cond_2", 1, false],
+        ["userMetadata.ecmp_hash", 14, false],
+        ["userMetadata.ecmp_group_id", 14, false],
+        ["userMetadata.syn_defence_flag", 1, false],
+        ["userMetadata.a", 14, false],
+        ["userMetadata.output_hash_one", 32, false],
+        ["userMetadata.output_hash_two", 32, false],
+        ["userMetadata.counter_one", 32, false],
+        ["userMetadata.counter_two", 32, false],
+        ["userMetadata.output_hash_three", 32, false],
+        ["userMetadata.counter_three", 32, false],
+        ["userMetadata.output_hash_four", 32, false],
+        ["userMetadata.counter_four", 32, false],
+        ["userMetadata.is_to_clean", 1, false],
+        ["userMetadata.ng_hash", 14, false],
+        ["userMetadata.loc_mac", 48, false],
+        ["userMetadata.icmp_req", 32, false],
+        ["userMetadata.icmp_resp", 32, false],
+        ["_padding_0", 3, false]
+      ]
+    },
+    {
+      "name" : "standard_metadata",
+      "id" : 1,
+      "fields" : [
+        ["ingress_port", 9, false],
+        ["egress_spec", 9, false],
+        ["egress_port", 9, false],
+        ["instance_type", 32, false],
+        ["packet_length", 32, false],
+        ["enq_timestamp", 32, false],
+        ["enq_qdepth", 19, false],
+        ["deq_timedelta", 32, false],
+        ["deq_qdepth", 19, false],
+        ["ingress_global_timestamp", 48, false],
+        ["egress_global_timestamp", 48, false],
+        ["mcast_grp", 16, false],
+        ["egress_rid", 16, false],
+        ["checksum_error", 1, false],
+        ["parser_error", 32, false],
+        ["priority", 3, false],
+        ["qid", 5, false],
+        ["_padding", 6, false]
+      ]
+    },
+    {
+      "name" : "ethernet_t",
+      "id" : 2,
+      "fields" : [
+        ["dstAddr", 48, false],
+        ["srcAddr", 48, false],
+        ["etherType", 16, false]
+      ]
+    },
+    {
+      "name" : "my_tunnel_t",
+      "id" : 3,
+      "fields" : [
+        ["proto_id", 16, false],
+        ["tun_id", 32, false],
+        ["checked", 1, false],
+        ["sid", 7, false],
+        ["_pad", 8, false],
+        ["srcAddr", 32, false],
+        ["dstAddr", 32, false]
+      ]
+    },
+    {
+      "name" : "ipv4_t",
+      "id" : 4,
+      "fields" : [
+        ["version", 4, false],
+        ["ihl", 4, false],
+        ["tos", 8, false],
+        ["totalLen", 16, false],
+        ["identification", 16, false],
+        ["flags", 3, false],
+        ["fragOffset", 13, false],
+        ["ttl", 8, false],
+        ["protocol", 8, false],
+        ["hdrChecksum", 16, false],
+        ["src_addr", 32, false],
+        ["dst_addr", 32, false]
+      ]
+    },
+    {
+      "name" : "tcp_t",
+      "id" : 5,
+      "fields" : [
+        ["srcPort", 16, false],
+        ["dstPort", 16, false],
+        ["seqNo", 32, false],
+        ["ackNo", 32, false],
+        ["dataOffset", 4, false],
+        ["res", 4, false],
+        ["cwr", 1, false],
+        ["ece", 1, false],
+        ["urg", 1, false],
+        ["ack", 1, false],
+        ["psh", 1, false],
+        ["rst", 1, false],
+        ["syn", 1, false],
+        ["fin", 1, false],
+        ["window", 16, false],
+        ["checksum", 16, false],
+        ["urgentPtr", 16, false]
+      ]
+    },
+    {
+      "name" : "icmp_t",
+      "id" : 6,
+      "fields" : [
+        ["typeCode", 16, false],
+        ["hdrChecksum", 16, false]
+      ]
+    }
+  ],
+  "headers" : [
+    {
+      "name" : "scalars",
+      "id" : 0,
+      "header_type" : "scalars_0",
+      "metadata" : true,
+      "pi_omit" : true
+    },
+    {
+      "name" : "standard_metadata",
+      "id" : 1,
+      "header_type" : "standard_metadata",
+      "metadata" : true,
+      "pi_omit" : true
+    },
+    {
+      "name" : "ethernet",
+      "id" : 2,
+      "header_type" : "ethernet_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "my_tunnel",
+      "id" : 3,
+      "header_type" : "my_tunnel_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "ipv4",
+      "id" : 4,
+      "header_type" : "ipv4_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "tcp",
+      "id" : 5,
+      "header_type" : "tcp_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "icmp",
+      "id" : 6,
+      "header_type" : "icmp_t",
+      "metadata" : false,
+      "pi_omit" : true
+    }
+  ],
+  "header_stacks" : [],
+  "header_union_types" : [],
+  "header_unions" : [],
+  "header_union_stacks" : [],
+  "field_lists" : [],
+  "errors" : [
+    ["NoError", 1],
+    ["PacketTooShort", 2],
+    ["NoMatch", 3],
+    ["StackOutOfBounds", 4],
+    ["HeaderTooShort", 5],
+    ["ParserTimeout", 6],
+    ["ParserInvalidArgument", 7]
+  ],
+  "enums" : [],
+  "parsers" : [
+    {
+      "name" : "parser",
+      "id" : 0,
+      "init_state" : "start",
+      "parse_states" : [
+        {
+          "name" : "start",
+          "id" : 0,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "ethernet"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "hexstr",
+              "value" : "0x1212",
+              "mask" : null,
+              "next_state" : "parse_my_tunnel"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0800",
+              "mask" : null,
+              "next_state" : "parse_ipv4"
+            },
+            {
+              "type" : "default",
+              "value" : null,
+              "mask" : null,
+              "next_state" : null
+            }
+          ],
+          "transition_key" : [
+            {
+              "type" : "field",
+              "value" : ["ethernet", "etherType"]
+            }
+          ]
+        },
+        {
+          "name" : "parse_my_tunnel",
+          "id" : 1,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "my_tunnel"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "hexstr",
+              "value" : "0x0800",
+              "mask" : null,
+              "next_state" : "parse_ipv4"
+            },
+            {
+              "type" : "default",
+              "value" : null,
+              "mask" : null,
+              "next_state" : null
+            }
+          ],
+          "transition_key" : [
+            {
+              "type" : "field",
+              "value" : ["my_tunnel", "proto_id"]
+            }
+          ]
+        },
+        {
+          "name" : "parse_ipv4",
+          "id" : 2,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "ipv4"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "hexstr",
+              "value" : "0x06",
+              "mask" : null,
+              "next_state" : "parse_tcp"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x01",
+              "mask" : null,
+              "next_state" : "parse_icmp"
+            },
+            {
+              "type" : "default",
+              "value" : null,
+              "mask" : null,
+              "next_state" : null
+            }
+          ],
+          "transition_key" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "protocol"]
+            }
+          ]
+        },
+        {
+          "name" : "parse_tcp",
+          "id" : 3,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "tcp"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "default",
+              "value" : null,
+              "mask" : null,
+              "next_state" : null
+            }
+          ],
+          "transition_key" : []
+        },
+        {
+          "name" : "parse_icmp",
+          "id" : 4,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "icmp"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "default",
+              "value" : null,
+              "mask" : null,
+              "next_state" : null
+            }
+          ],
+          "transition_key" : []
+        }
+      ]
+    }
+  ],
+  "parse_vsets" : [],
+  "deparsers" : [
+    {
+      "name" : "deparser",
+      "id" : 0,
+      "source_info" : {
+        "filename" : "p4src/include/parsers.p4",
+        "line" : 59,
+        "column" : 8,
+        "source_fragment" : "MyDeparser"
+      },
+      "order" : ["ethernet", "my_tunnel", "ipv4", "tcp", "icmp"],
+      "primitives" : []
+    }
+  ],
+  "meter_arrays" : [],
+  "counter_arrays" : [],
+  "register_arrays" : [
+    {
+      "name" : "MyIngress.bloom_filter",
+      "id" : 0,
+      "source_info" : {
+        "filename" : "p4src/clean.p4",
+        "line" : 25,
+        "column" : 28,
+        "source_fragment" : "bloom_filter"
+      },
+      "size" : 4096,
+      "bitwidth" : 32
+    }
+  ],
+  "calculations" : [
+    {
+      "name" : "calc",
+      "id" : 0,
+      "algo" : "crc16",
+      "input" : [
+        {
+          "type" : "field",
+          "value" : ["ipv4", "src_addr"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "dst_addr"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "protocol"]
+        }
+      ]
+    },
+    {
+      "name" : "calc_0",
+      "id" : 1,
+      "algo" : "crc32",
+      "input" : [
+        {
+          "type" : "field",
+          "value" : ["ipv4", "src_addr"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "dst_addr"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "protocol"]
+        }
+      ]
+    },
+    {
+      "name" : "calc_1",
+      "id" : 2,
+      "source_info" : {
+        "filename" : "p4src/clean.p4",
+        "line" : 323,
+        "column" : 8,
+        "source_fragment" : "update_checksum( ..."
+      },
+      "algo" : "csum16",
+      "input" : [
+        {
+          "type" : "field",
+          "value" : ["ipv4", "version"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "ihl"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "tos"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "totalLen"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "identification"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "flags"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "fragOffset"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "ttl"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "protocol"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "src_addr"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "dst_addr"]
+        }
+      ]
+    }
+  ],
+  "learn_lists" : [],
+  "actions" : [
+    {
+      "name" : "NoAction",
+      "id" : 0,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 1,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 2,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "MyIngress._drop",
+      "id" : 3,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "mark_to_drop",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "standard_metadata"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 28,
+            "column" : 8,
+            "source_fragment" : "mark_to_drop(standard_metadata)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress._drop",
+      "id" : 4,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "mark_to_drop",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "standard_metadata"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 28,
+            "column" : 8,
+            "source_fragment" : "mark_to_drop(standard_metadata)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress._drop",
+      "id" : 5,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "mark_to_drop",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "standard_metadata"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 28,
+            "column" : 8,
+            "source_fragment" : "mark_to_drop(standard_metadata)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress._drop",
+      "id" : 6,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "mark_to_drop",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "standard_metadata"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 28,
+            "column" : 8,
+            "source_fragment" : "mark_to_drop(standard_metadata)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress._drop",
+      "id" : 7,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "mark_to_drop",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "standard_metadata"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 28,
+            "column" : 8,
+            "source_fragment" : "mark_to_drop(standard_metadata)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress._drop",
+      "id" : 8,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "mark_to_drop",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "standard_metadata"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 28,
+            "column" : 8,
+            "source_fragment" : "mark_to_drop(standard_metadata)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress._drop",
+      "id" : 9,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "mark_to_drop",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "standard_metadata"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 28,
+            "column" : 8,
+            "source_fragment" : "mark_to_drop(standard_metadata)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress._drop",
+      "id" : 10,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "mark_to_drop",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "standard_metadata"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 28,
+            "column" : 8,
+            "source_fragment" : "mark_to_drop(standard_metadata)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress._drop",
+      "id" : 11,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "mark_to_drop",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "standard_metadata"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 28,
+            "column" : 8,
+            "source_fragment" : "mark_to_drop(standard_metadata)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress._drop",
+      "id" : 12,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "mark_to_drop",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "standard_metadata"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 28,
+            "column" : 8,
+            "source_fragment" : "mark_to_drop(standard_metadata)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.set_out_port",
+      "id" : 13,
+      "runtime_data" : [
+        {
+          "name" : "port",
+          "bitwidth" : 9
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "egress_spec"]
+            },
+            {
+              "type" : "runtime_data",
+              "value" : 0
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 36,
+            "column" : 8,
+            "source_fragment" : "standard_metadata.egress_spec = port"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.set_clean_flag",
+      "id" : 14,
+      "runtime_data" : [
+        {
+          "name" : "flag",
+          "bitwidth" : 32
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.is_to_clean"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "local",
+                    "value" : 0
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0x01"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 41,
+            "column" : 8,
+            "source_fragment" : "meta.is_to_clean=(bit<1>)flag"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.my_tunnel_ingress",
+      "id" : 15,
+      "runtime_data" : [
+        {
+          "name" : "tun_id",
+          "bitwidth" : 32
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "add_header",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "my_tunnel"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 46,
+            "column" : 8,
+            "source_fragment" : "hdr.my_tunnel.setValid()"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["my_tunnel", "tun_id"]
+            },
+            {
+              "type" : "runtime_data",
+              "value" : 0
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 47,
+            "column" : 8,
+            "source_fragment" : "hdr.my_tunnel.tun_id = tun_id"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["my_tunnel", "proto_id"]
+            },
+            {
+              "type" : "field",
+              "value" : ["ethernet", "etherType"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 48,
+            "column" : 8,
+            "source_fragment" : "hdr.my_tunnel.proto_id = hdr.ethernet.etherType"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ethernet", "etherType"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x1212"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/include/headers.p4",
+            "line" : 11,
+            "column" : 34,
+            "source_fragment" : "0x1212; ..."
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.send_to_server",
+      "id" : 16,
+      "runtime_data" : [
+        {
+          "name" : "dstAddr",
+          "bitwidth" : 48
+        },
+        {
+          "name" : "server_port",
+          "bitwidth" : 9
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ethernet", "srcAddr"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.loc_mac"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 58,
+            "column" : 8,
+            "source_fragment" : "hdr.ethernet.srcAddr = meta.loc_mac"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "tos"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 60,
+            "column" : 8,
+            "source_fragment" : "hdr.ipv4.tos=(bit<8>) 0"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ethernet", "dstAddr"]
+            },
+            {
+              "type" : "runtime_data",
+              "value" : 0
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 62,
+            "column" : 8,
+            "source_fragment" : "hdr.ethernet.dstAddr = dstAddr"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "egress_spec"]
+            },
+            {
+              "type" : "runtime_data",
+              "value" : 1
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 65,
+            "column" : 8,
+            "source_fragment" : "standard_metadata.egress_spec = server_port"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "ttl"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["ipv4", "ttl"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xff"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 71,
+            "column" : 8,
+            "source_fragment" : "hdr.ipv4.ttl = hdr.ipv4.ttl -1"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ethernet", "etherType"]
+            },
+            {
+              "type" : "field",
+              "value" : ["my_tunnel", "proto_id"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 74,
+            "column" : 8,
+            "source_fragment" : "hdr.ethernet.etherType = hdr.my_tunnel.proto_id"
+          }
+        },
+        {
+          "op" : "remove_header",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "my_tunnel"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 75,
+            "column" : 8,
+            "source_fragment" : "hdr.my_tunnel.setInvalid()"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.my_tunnel_egress",
+      "id" : 17,
+      "runtime_data" : [
+        {
+          "name" : "port",
+          "bitwidth" : 9
+        },
+        {
+          "name" : "dstAddr",
+          "bitwidth" : 48
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "egress_spec"]
+            },
+            {
+              "type" : "runtime_data",
+              "value" : 0
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 81,
+            "column" : 8,
+            "source_fragment" : "standard_metadata.egress_spec = port"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ethernet", "etherType"]
+            },
+            {
+              "type" : "field",
+              "value" : ["my_tunnel", "proto_id"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 82,
+            "column" : 8,
+            "source_fragment" : "hdr.ethernet.etherType = hdr.my_tunnel.proto_id"
+          }
+        },
+        {
+          "op" : "remove_header",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "my_tunnel"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 83,
+            "column" : 8,
+            "source_fragment" : "hdr.my_tunnel.setInvalid()"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ethernet", "dstAddr"]
+            },
+            {
+              "type" : "runtime_data",
+              "value" : 1
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 85,
+            "column" : 8,
+            "source_fragment" : "hdr.ethernet.dstAddr = dstAddr"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.update_bloom_filter",
+      "id" : 18,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "modify_field_with_hash_based_offset",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.output_hash_one"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0000"
+            },
+            {
+              "type" : "calculation",
+              "value" : "calc"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00001000"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 127,
+            "column" : 7,
+            "source_fragment" : "hash(meta.output_hash_one, HashAlgorithm.crc16, (bit<16>)0, {hdr.ipv4.src_addr, ..."
+          }
+        },
+        {
+          "op" : "modify_field_with_hash_based_offset",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.output_hash_two"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0000"
+            },
+            {
+              "type" : "calculation",
+              "value" : "calc_0"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00001000"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 133,
+            "column" : 7,
+            "source_fragment" : "hash(meta.output_hash_two, HashAlgorithm.crc32, (bit<16>)0, {hdr.ipv4.src_addr, ..."
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.counter_one"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.bloom_filter"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.output_hash_one"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 139,
+            "column" : 8,
+            "source_fragment" : "bloom_filter.read(meta.counter_one, meta.output_hash_one)"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.counter_two"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.bloom_filter"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.output_hash_two"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 140,
+            "column" : 8,
+            "source_fragment" : "bloom_filter.read(meta.counter_two, meta.output_hash_two)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "cond"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "d2b",
+                      "left" : null,
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["tcp", "$valid$"]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.counter_one"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "?",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "+",
+                              "left" : {
+                                "type" : "field",
+                                "value" : ["scalars", "userMetadata.counter_one"]
+                              },
+                              "right" : {
+                                "type" : "hexstr",
+                                "value" : "0x00000001"
+                              }
+                            }
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0xffffffff"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["scalars", "userMetadata.counter_one"]
+                      },
+                      "cond" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "==",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["tcp", "syn"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0x01"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["scalars", "userMetadata.counter_one"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "d2b",
+                      "left" : null,
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["scalars", "cond"]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.counter_two"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "?",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "+",
+                              "left" : {
+                                "type" : "field",
+                                "value" : ["scalars", "userMetadata.counter_two"]
+                              },
+                              "right" : {
+                                "type" : "hexstr",
+                                "value" : "0x00000001"
+                              }
+                            }
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0xffffffff"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["scalars", "userMetadata.counter_two"]
+                      },
+                      "cond" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "==",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["tcp", "ack"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0x01"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["scalars", "userMetadata.counter_two"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "d2b",
+                      "left" : null,
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["scalars", "cond"]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "cond_2"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "d2b",
+                      "left" : null,
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["icmp", "$valid$"]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.counter_one"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "?",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "+",
+                              "left" : {
+                                "type" : "field",
+                                "value" : ["scalars", "userMetadata.counter_one"]
+                              },
+                              "right" : {
+                                "type" : "hexstr",
+                                "value" : "0x00000001"
+                              }
+                            }
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0xffffffff"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["scalars", "userMetadata.counter_one"]
+                      },
+                      "cond" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "==",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["icmp", "typeCode"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0x0800"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["scalars", "userMetadata.counter_one"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "d2b",
+                      "left" : null,
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["scalars", "cond_2"]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.icmp_req"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "?",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "userMetadata.counter_one"]
+                      },
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["scalars", "userMetadata.icmp_req"]
+                      },
+                      "cond" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "==",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["icmp", "typeCode"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0x0800"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["scalars", "userMetadata.icmp_req"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "d2b",
+                      "left" : null,
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["scalars", "cond_2"]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.counter_two"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "?",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "+",
+                              "left" : {
+                                "type" : "field",
+                                "value" : ["scalars", "userMetadata.counter_two"]
+                              },
+                              "right" : {
+                                "type" : "hexstr",
+                                "value" : "0x00000001"
+                              }
+                            }
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0xffffffff"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["scalars", "userMetadata.counter_two"]
+                      },
+                      "cond" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "==",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["icmp", "typeCode"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0x0000"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["scalars", "userMetadata.counter_two"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "d2b",
+                      "left" : null,
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["scalars", "cond_2"]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.icmp_resp"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "?",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "userMetadata.counter_two"]
+                      },
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["scalars", "userMetadata.icmp_resp"]
+                      },
+                      "cond" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "==",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["icmp", "typeCode"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0x0000"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["scalars", "userMetadata.icmp_resp"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "d2b",
+                      "left" : null,
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["scalars", "cond_2"]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.bloom_filter"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.output_hash_one"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.counter_one"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 163,
+            "column" : 8,
+            "source_fragment" : "bloom_filter.write(meta.output_hash_one, meta.counter_one)"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.bloom_filter"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.output_hash_two"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.counter_two"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 164,
+            "column" : 8,
+            "source_fragment" : "bloom_filter.write(meta.output_hash_two, meta.counter_two)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.getMac",
+      "id" : 19,
+      "runtime_data" : [
+        {
+          "name" : "Mymac",
+          "bitwidth" : 48
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.loc_mac"]
+            },
+            {
+              "type" : "runtime_data",
+              "value" : 0
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 186,
+            "column" : 8,
+            "source_fragment" : "meta.loc_mac=Mymac"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "act",
+      "id" : 20,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "hasReturned"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "bool",
+                    "value" : false
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name" : "clean233",
+      "id" : 21,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "hasReturned"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "bool",
+                    "value" : true
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 233,
+            "column" : 24,
+            "source_fragment" : "return"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "clean237",
+      "id" : 22,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "hasReturned"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "bool",
+                    "value" : true
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 237,
+            "column" : 24,
+            "source_fragment" : "return"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "clean241",
+      "id" : 23,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["my_tunnel", "checked"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x01"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 241,
+            "column" : 20,
+            "source_fragment" : "hdr.my_tunnel.checked=(bit<1>)1"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "clean259",
+      "id" : 24,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "hasReturned"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "bool",
+                    "value" : true
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 259,
+            "column" : 36,
+            "source_fragment" : "return"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "clean265",
+      "id" : 25,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "hasReturned"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "bool",
+                    "value" : true
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 265,
+            "column" : 44,
+            "source_fragment" : "return"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "clean270",
+      "id" : 26,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.is_to_clean"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 270,
+            "column" : 32,
+            "source_fragment" : "meta.is_to_clean=(bit<1>)0"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "clean277",
+      "id" : 27,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "hasReturned"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "bool",
+                    "value" : true
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 277,
+            "column" : 36,
+            "source_fragment" : "return"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "clean284",
+      "id" : 28,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "hasReturned"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "bool",
+                    "value" : true
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 284,
+            "column" : 36,
+            "source_fragment" : "return"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "clean290",
+      "id" : 29,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "hasReturned"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "bool",
+                    "value" : true
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 290,
+            "column" : 32,
+            "source_fragment" : "return"
+          }
+        }
+      ]
+    }
+  ],
+  "pipelines" : [
+    {
+      "name" : "ingress",
+      "id" : 0,
+      "source_info" : {
+        "filename" : "p4src/clean.p4",
+        "line" : 21,
+        "column" : 8,
+        "source_fragment" : "MyIngress"
+      },
+      "init_table" : "tbl_act",
+      "tables" : [
+        {
+          "name" : "tbl_act",
+          "id" : 0,
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [20],
+          "actions" : ["act"],
+          "base_default_next" : "MyIngress.getInfo",
+          "next_tables" : {
+            "act" : "MyIngress.getInfo"
+          },
+          "default_entry" : {
+            "action_id" : 20,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "MyIngress.getInfo",
+          "id" : 1,
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 189,
+            "column" : 10,
+            "source_fragment" : "getInfo"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [19, 1],
+          "actions" : ["MyIngress.getMac", "NoAction"],
+          "base_default_next" : "node_4",
+          "next_tables" : {
+            "MyIngress.getMac" : "node_4",
+            "NoAction" : "node_4"
+          },
+          "default_entry" : {
+            "action_id" : 1,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "MyIngress.t_tunnel_ingress",
+          "id" : 2,
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 92,
+            "column" : 10,
+            "source_fragment" : "t_tunnel_ingress"
+          },
+          "key" : [
+            {
+              "match_type" : "lpm",
+              "name" : "hdr.ipv4.dst_addr",
+              "target" : ["ipv4", "dst_addr"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "lpm",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [15, 3],
+          "actions" : ["MyIngress.my_tunnel_ingress", "MyIngress._drop"],
+          "base_default_next" : "node_7",
+          "next_tables" : {
+            "MyIngress.my_tunnel_ingress" : "node_7",
+            "MyIngress._drop" : "node_7"
+          },
+          "default_entry" : {
+            "action_id" : 3,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "tbl__drop",
+          "id" : 3,
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 232,
+            "column" : 24,
+            "source_fragment" : "_drop()"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [7],
+          "actions" : ["MyIngress._drop"],
+          "base_default_next" : "tbl_clean233",
+          "next_tables" : {
+            "MyIngress._drop" : "tbl_clean233"
+          },
+          "default_entry" : {
+            "action_id" : 7,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_clean233",
+          "id" : 4,
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 233,
+            "column" : 24,
+            "source_fragment" : "return"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [21],
+          "actions" : ["clean233"],
+          "base_default_next" : "node_11",
+          "next_tables" : {
+            "clean233" : "node_11"
+          },
+          "default_entry" : {
+            "action_id" : 21,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl__drop_0",
+          "id" : 5,
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 236,
+            "column" : 24,
+            "source_fragment" : "_drop()"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [8],
+          "actions" : ["MyIngress._drop"],
+          "base_default_next" : "tbl_clean237",
+          "next_tables" : {
+            "MyIngress._drop" : "tbl_clean237"
+          },
+          "default_entry" : {
+            "action_id" : 8,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_clean237",
+          "id" : 6,
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 237,
+            "column" : 24,
+            "source_fragment" : "return"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [22],
+          "actions" : ["clean237"],
+          "base_default_next" : "node_15",
+          "next_tables" : {
+            "clean237" : "node_15"
+          },
+          "default_entry" : {
+            "action_id" : 22,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_clean241",
+          "id" : 7,
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 241,
+            "column" : 41,
+            "source_fragment" : "="
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [23],
+          "actions" : ["clean241"],
+          "base_default_next" : "node_17",
+          "next_tables" : {
+            "clean241" : "node_17"
+          },
+          "default_entry" : {
+            "action_id" : 23,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "MyIngress.p4_clean",
+          "id" : 8,
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 203,
+            "column" : 10,
+            "source_fragment" : "p4_clean"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "hdr.my_tunnel.tun_id",
+              "target" : ["my_tunnel", "tun_id"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [14, 6, 2],
+          "actions" : ["MyIngress.set_clean_flag", "MyIngress._drop", "NoAction"],
+          "base_default_next" : "node_20",
+          "next_tables" : {
+            "MyIngress.set_clean_flag" : "node_20",
+            "MyIngress._drop" : "node_20",
+            "NoAction" : "node_20"
+          },
+          "default_entry" : {
+            "action_id" : 2,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "tbl_update_bloom_filter",
+          "id" : 9,
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 254,
+            "column" : 24,
+            "source_fragment" : "update_bloom_filter()"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [18],
+          "actions" : ["MyIngress.update_bloom_filter"],
+          "base_default_next" : "node_23",
+          "next_tables" : {
+            "MyIngress.update_bloom_filter" : "node_23"
+          },
+          "default_entry" : {
+            "action_id" : 18,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl__drop_1",
+          "id" : 10,
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 258,
+            "column" : 36,
+            "source_fragment" : "_drop()"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [9],
+          "actions" : ["MyIngress._drop"],
+          "base_default_next" : "tbl_clean259",
+          "next_tables" : {
+            "MyIngress._drop" : "tbl_clean259"
+          },
+          "default_entry" : {
+            "action_id" : 9,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_clean259",
+          "id" : 11,
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 259,
+            "column" : 36,
+            "source_fragment" : "return"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [24],
+          "actions" : ["clean259"],
+          "base_default_next" : "node_32",
+          "next_tables" : {
+            "clean259" : "node_32"
+          },
+          "default_entry" : {
+            "action_id" : 24,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "MyIngress.server_lpm",
+          "id" : 12,
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 172,
+            "column" : 10,
+            "source_fragment" : "server_lpm"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "hdr.my_tunnel.tun_id",
+              "target" : ["my_tunnel", "tun_id"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [16, 5, 0],
+          "actions" : ["MyIngress.send_to_server", "MyIngress._drop", "NoAction"],
+          "base_default_next" : "node_32",
+          "next_tables" : {
+            "MyIngress.send_to_server" : "tbl_clean265",
+            "MyIngress._drop" : "node_32",
+            "NoAction" : "node_32"
+          },
+          "default_entry" : {
+            "action_id" : 0,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "tbl_clean265",
+          "id" : 13,
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 265,
+            "column" : 44,
+            "source_fragment" : "return"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [25],
+          "actions" : ["clean265"],
+          "base_default_next" : "node_32",
+          "next_tables" : {
+            "clean265" : "node_32"
+          },
+          "default_entry" : {
+            "action_id" : 25,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_clean270",
+          "id" : 14,
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 270,
+            "column" : 48,
+            "source_fragment" : "="
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [26],
+          "actions" : ["clean270"],
+          "base_default_next" : "node_32",
+          "next_tables" : {
+            "clean270" : "node_32"
+          },
+          "default_entry" : {
+            "action_id" : 26,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl__drop_2",
+          "id" : 15,
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 276,
+            "column" : 36,
+            "source_fragment" : "_drop()"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [10],
+          "actions" : ["MyIngress._drop"],
+          "base_default_next" : "tbl_clean277",
+          "next_tables" : {
+            "MyIngress._drop" : "tbl_clean277"
+          },
+          "default_entry" : {
+            "action_id" : 10,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_clean277",
+          "id" : 16,
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 277,
+            "column" : 36,
+            "source_fragment" : "return"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [27],
+          "actions" : ["clean277"],
+          "base_default_next" : "node_38",
+          "next_tables" : {
+            "clean277" : "node_38"
+          },
+          "default_entry" : {
+            "action_id" : 27,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl__drop_3",
+          "id" : 17,
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 283,
+            "column" : 36,
+            "source_fragment" : "_drop()"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [11],
+          "actions" : ["MyIngress._drop"],
+          "base_default_next" : "tbl_clean284",
+          "next_tables" : {
+            "MyIngress._drop" : "tbl_clean284"
+          },
+          "default_entry" : {
+            "action_id" : 11,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_clean284",
+          "id" : 18,
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 284,
+            "column" : 36,
+            "source_fragment" : "return"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [28],
+          "actions" : ["clean284"],
+          "base_default_next" : "node_43",
+          "next_tables" : {
+            "clean284" : "node_43"
+          },
+          "default_entry" : {
+            "action_id" : 28,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl__drop_4",
+          "id" : 19,
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 289,
+            "column" : 32,
+            "source_fragment" : "_drop()"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [12],
+          "actions" : ["MyIngress._drop"],
+          "base_default_next" : "tbl_clean290",
+          "next_tables" : {
+            "MyIngress._drop" : "tbl_clean290"
+          },
+          "default_entry" : {
+            "action_id" : 12,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_clean290",
+          "id" : 20,
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 290,
+            "column" : 32,
+            "source_fragment" : "return"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [29],
+          "actions" : ["clean290"],
+          "base_default_next" : "node_47",
+          "next_tables" : {
+            "clean290" : "node_47"
+          },
+          "default_entry" : {
+            "action_id" : 29,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "MyIngress.t_tunnel_fwd",
+          "id" : 21,
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 105,
+            "column" : 10,
+            "source_fragment" : "t_tunnel_fwd"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "hdr.my_tunnel.tun_id",
+              "target" : ["my_tunnel", "tun_id"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [13, 17, 4],
+          "actions" : ["MyIngress.set_out_port", "MyIngress.my_tunnel_egress", "MyIngress._drop"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "MyIngress.set_out_port" : null,
+            "MyIngress.my_tunnel_egress" : null,
+            "MyIngress._drop" : null
+          },
+          "default_entry" : {
+            "action_id" : 4,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        }
+      ],
+      "action_profiles" : [],
+      "conditionals" : [
+        {
+          "name" : "node_4",
+          "id" : 0,
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 223,
+            "column" : 12,
+            "source_fragment" : "hdr.ipv4.isValid()"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "d2b",
+              "left" : null,
+              "right" : {
+                "type" : "field",
+                "value" : ["ipv4", "$valid$"]
+              }
+            }
+          },
+          "false_next" : null,
+          "true_next" : "node_5"
+        },
+        {
+          "name" : "node_5",
+          "id" : 1,
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 227,
+            "column" : 16,
+            "source_fragment" : "hdr.ipv4.isValid() && !hdr.my_tunnel.isValid()"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "and",
+              "left" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "d2b",
+                  "left" : null,
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["ipv4", "$valid$"]
+                  }
+                }
+              },
+              "right" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "not",
+                  "left" : null,
+                  "right" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "d2b",
+                      "left" : null,
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["my_tunnel", "$valid$"]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "true_next" : "MyIngress.t_tunnel_ingress",
+          "false_next" : "node_17"
+        },
+        {
+          "name" : "node_7",
+          "id" : 2,
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 229,
+            "column" : 19,
+            "source_fragment" : "standard_metadata.ingress_port==7"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "==",
+              "left" : {
+                "type" : "field",
+                "value" : ["standard_metadata", "ingress_port"]
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x0007"
+              }
+            }
+          },
+          "true_next" : "node_8",
+          "false_next" : "node_17"
+        },
+        {
+          "name" : "node_8",
+          "id" : 3,
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 231,
+            "column" : 23,
+            "source_fragment" : "hdr.ipv4.tos!=(bit<8>)1"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "!=",
+              "left" : {
+                "type" : "field",
+                "value" : ["ipv4", "tos"]
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x01"
+              }
+            }
+          },
+          "true_next" : "tbl__drop",
+          "false_next" : "node_11"
+        },
+        {
+          "name" : "node_11",
+          "id" : 4,
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "not",
+              "left" : null,
+              "right" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "d2b",
+                  "left" : null,
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["scalars", "hasReturned"]
+                  }
+                }
+              }
+            }
+          },
+          "true_next" : "node_12",
+          "false_next" : "node_15"
+        },
+        {
+          "name" : "node_12",
+          "id" : 5,
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 235,
+            "column" : 23,
+            "source_fragment" : "hdr.ethernet.srcAddr!=meta.loc_mac"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "!=",
+              "left" : {
+                "type" : "field",
+                "value" : ["ethernet", "srcAddr"]
+              },
+              "right" : {
+                "type" : "field",
+                "value" : ["scalars", "userMetadata.loc_mac"]
+              }
+            }
+          },
+          "true_next" : "tbl__drop_0",
+          "false_next" : "node_15"
+        },
+        {
+          "name" : "node_15",
+          "id" : 6,
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "not",
+              "left" : null,
+              "right" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "d2b",
+                  "left" : null,
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["scalars", "hasReturned"]
+                  }
+                }
+              }
+            }
+          },
+          "true_next" : "tbl_clean241",
+          "false_next" : "node_17"
+        },
+        {
+          "name" : "node_17",
+          "id" : 7,
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "not",
+              "left" : null,
+              "right" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "d2b",
+                  "left" : null,
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["scalars", "hasReturned"]
+                  }
+                }
+              }
+            }
+          },
+          "false_next" : null,
+          "true_next" : "node_18"
+        },
+        {
+          "name" : "node_18",
+          "id" : 8,
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 249,
+            "column" : 16,
+            "source_fragment" : "hdr.my_tunnel.isValid()"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "d2b",
+              "left" : null,
+              "right" : {
+                "type" : "field",
+                "value" : ["my_tunnel", "$valid$"]
+              }
+            }
+          },
+          "false_next" : null,
+          "true_next" : "MyIngress.p4_clean"
+        },
+        {
+          "name" : "node_20",
+          "id" : 9,
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 252,
+            "column" : 19,
+            "source_fragment" : "hdr.my_tunnel.checked!=(bit<1>)1"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "!=",
+              "left" : {
+                "type" : "field",
+                "value" : ["my_tunnel", "checked"]
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x01"
+              }
+            }
+          },
+          "true_next" : "node_21",
+          "false_next" : "node_47"
+        },
+        {
+          "name" : "node_21",
+          "id" : 10,
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 253,
+            "column" : 23,
+            "source_fragment" : "meta.is_to_clean==(bit<1>)1"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "==",
+              "left" : {
+                "type" : "field",
+                "value" : ["scalars", "userMetadata.is_to_clean"]
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x01"
+              }
+            }
+          },
+          "true_next" : "tbl_update_bloom_filter",
+          "false_next" : "node_47"
+        },
+        {
+          "name" : "node_23",
+          "id" : 11,
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 255,
+            "column" : 28,
+            "source_fragment" : "hdr.tcp.isValid()"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "d2b",
+              "left" : null,
+              "right" : {
+                "type" : "field",
+                "value" : ["tcp", "$valid$"]
+              }
+            }
+          },
+          "true_next" : "node_24",
+          "false_next" : "node_32"
+        },
+        {
+          "name" : "node_24",
+          "id" : 12,
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 256,
+            "column" : 31,
+            "source_fragment" : "meta.counter_one > meta.counter_two"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : ">",
+              "left" : {
+                "type" : "field",
+                "value" : ["scalars", "userMetadata.counter_one"]
+              },
+              "right" : {
+                "type" : "field",
+                "value" : ["scalars", "userMetadata.counter_two"]
+              }
+            }
+          },
+          "true_next" : "node_25",
+          "false_next" : "tbl_clean270"
+        },
+        {
+          "name" : "node_25",
+          "id" : 13,
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 257,
+            "column" : 37,
+            "source_fragment" : "meta.counter_one - meta.counter_two > 100"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : ">",
+              "left" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "-",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "userMetadata.counter_one"]
+                      },
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["scalars", "userMetadata.counter_two"]
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x00000064"
+              }
+            }
+          },
+          "true_next" : "tbl__drop_1",
+          "false_next" : "node_28"
+        },
+        {
+          "name" : "node_28",
+          "id" : 14,
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 260,
+            "column" : 41,
+            "source_fragment" : "meta.counter_one - meta.counter_two < 10"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "<",
+              "left" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "-",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "userMetadata.counter_one"]
+                      },
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["scalars", "userMetadata.counter_two"]
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x0000000a"
+              }
+            }
+          },
+          "false_next" : "MyIngress.server_lpm",
+          "true_next" : "node_32"
+        },
+        {
+          "name" : "node_32",
+          "id" : 15,
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "not",
+              "left" : null,
+              "right" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "d2b",
+                  "left" : null,
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["scalars", "hasReturned"]
+                  }
+                }
+              }
+            }
+          },
+          "true_next" : "node_33",
+          "false_next" : "node_47"
+        },
+        {
+          "name" : "node_33",
+          "id" : 16,
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 273,
+            "column" : 27,
+            "source_fragment" : "hdr.icmp.isValid()"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "d2b",
+              "left" : null,
+              "right" : {
+                "type" : "field",
+                "value" : ["icmp", "$valid$"]
+              }
+            }
+          },
+          "true_next" : "node_34",
+          "false_next" : "node_47"
+        },
+        {
+          "name" : "node_34",
+          "id" : 17,
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 274,
+            "column" : 31,
+            "source_fragment" : "meta.icmp_req > meta.icmp_resp"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : ">",
+              "left" : {
+                "type" : "field",
+                "value" : ["scalars", "userMetadata.icmp_req"]
+              },
+              "right" : {
+                "type" : "field",
+                "value" : ["scalars", "userMetadata.icmp_resp"]
+              }
+            }
+          },
+          "true_next" : "node_35",
+          "false_next" : "node_38"
+        },
+        {
+          "name" : "node_35",
+          "id" : 18,
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 275,
+            "column" : 37,
+            "source_fragment" : "meta.icmp_req-meta.icmp_resp > 100"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : ">",
+              "left" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "-",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "userMetadata.icmp_req"]
+                      },
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["scalars", "userMetadata.icmp_resp"]
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x00000064"
+              }
+            }
+          },
+          "true_next" : "tbl__drop_2",
+          "false_next" : "node_38"
+        },
+        {
+          "name" : "node_38",
+          "id" : 19,
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "not",
+              "left" : null,
+              "right" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "d2b",
+                  "left" : null,
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["scalars", "hasReturned"]
+                  }
+                }
+              }
+            }
+          },
+          "true_next" : "node_39",
+          "false_next" : "node_43"
+        },
+        {
+          "name" : "node_39",
+          "id" : 20,
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 281,
+            "column" : 31,
+            "source_fragment" : "meta.icmp_req<meta.icmp_resp"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "<",
+              "left" : {
+                "type" : "field",
+                "value" : ["scalars", "userMetadata.icmp_req"]
+              },
+              "right" : {
+                "type" : "field",
+                "value" : ["scalars", "userMetadata.icmp_resp"]
+              }
+            }
+          },
+          "true_next" : "node_40",
+          "false_next" : "node_43"
+        },
+        {
+          "name" : "node_40",
+          "id" : 21,
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 282,
+            "column" : 35,
+            "source_fragment" : "meta.icmp_resp-meta.icmp_req>100"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : ">",
+              "left" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "-",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "userMetadata.icmp_resp"]
+                      },
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["scalars", "userMetadata.icmp_req"]
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x00000064"
+              }
+            }
+          },
+          "true_next" : "tbl__drop_3",
+          "false_next" : "node_43"
+        },
+        {
+          "name" : "node_43",
+          "id" : 22,
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "not",
+              "left" : null,
+              "right" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "d2b",
+                  "left" : null,
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["scalars", "hasReturned"]
+                  }
+                }
+              }
+            }
+          },
+          "true_next" : "node_44",
+          "false_next" : "node_47"
+        },
+        {
+          "name" : "node_44",
+          "id" : 23,
+          "source_info" : {
+            "filename" : "p4src/clean.p4",
+            "line" : 288,
+            "column" : 31,
+            "source_fragment" : "meta.icmp_req+meta.icmp_resp>150"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : ">",
+              "left" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "userMetadata.icmp_req"]
+                      },
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["scalars", "userMetadata.icmp_resp"]
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x00000096"
+              }
+            }
+          },
+          "true_next" : "tbl__drop_4",
+          "false_next" : "node_47"
+        },
+        {
+          "name" : "node_47",
+          "id" : 24,
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "not",
+              "left" : null,
+              "right" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "d2b",
+                  "left" : null,
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["scalars", "hasReturned"]
+                  }
+                }
+              }
+            }
+          },
+          "false_next" : null,
+          "true_next" : "MyIngress.t_tunnel_fwd"
+        }
+      ]
+    },
+    {
+      "name" : "egress",
+      "id" : 1,
+      "source_info" : {
+        "filename" : "p4src/clean.p4",
+        "line" : 309,
+        "column" : 8,
+        "source_fragment" : "MyEgress"
+      },
+      "init_table" : null,
+      "tables" : [],
+      "action_profiles" : [],
+      "conditionals" : []
+    }
+  ],
+  "checksums" : [
+    {
+      "name" : "cksum",
+      "id" : 0,
+      "source_info" : {
+        "filename" : "p4src/clean.p4",
+        "line" : 323,
+        "column" : 8,
+        "source_fragment" : "update_checksum( ..."
+      },
+      "target" : ["ipv4", "hdrChecksum"],
+      "type" : "generic",
+      "calculation" : "calc_1",
+      "verify" : false,
+      "update" : true,
+      "if_cond" : {
+        "type" : "expression",
+        "value" : {
+          "op" : "d2b",
+          "left" : null,
+          "right" : {
+            "type" : "field",
+            "value" : ["ipv4", "$valid$"]
+          }
+        }
+      }
+    }
+  ],
+  "force_arith" : [],
+  "extern_instances" : [],
+  "field_aliases" : [
+    [
+      "queueing_metadata.enq_timestamp",
+      ["standard_metadata", "enq_timestamp"]
+    ],
+    [
+      "queueing_metadata.enq_qdepth",
+      ["standard_metadata", "enq_qdepth"]
+    ],
+    [
+      "queueing_metadata.deq_timedelta",
+      ["standard_metadata", "deq_timedelta"]
+    ],
+    [
+      "queueing_metadata.deq_qdepth",
+      ["standard_metadata", "deq_qdepth"]
+    ],
+    [
+      "intrinsic_metadata.ingress_global_timestamp",
+      ["standard_metadata", "ingress_global_timestamp"]
+    ],
+    [
+      "intrinsic_metadata.egress_global_timestamp",
+      ["standard_metadata", "egress_global_timestamp"]
+    ],
+    [
+      "intrinsic_metadata.mcast_grp",
+      ["standard_metadata", "mcast_grp"]
+    ],
+    [
+      "intrinsic_metadata.egress_rid",
+      ["standard_metadata", "egress_rid"]
+    ],
+    [
+      "intrinsic_metadata.priority",
+      ["standard_metadata", "priority"]
+    ],
+    [
+      "queueing_metadata.qid",
+      ["standard_metadata", "qid"]
+    ]
+  ],
+  "program" : "/home/user/Desktop/test_another/p4src/clean.p4i",
+  "__meta__" : {
+    "version" : [2, 23],
+    "compiler" : "https://github.com/p4lang/p4c"
+  }
+}

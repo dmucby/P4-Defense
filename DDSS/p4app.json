@@ -1,0 +1,102 @@
+{
+  "program": "p4src/clean.p4",
+  "switch": "simple_switch",
+  "compiler": "p4c",
+  "options": "--target bmv2 --arch v1model --std p4-16",
+  "switch_cli": "simple_switch_CLI",
+  "cli": true,
+  "pcap_dump": true,
+  "enable_log": true,
+    "topo_module": {
+    "file_path": "",
+    "module_name": "p4utils.mininetlib.apptopo",
+    "object_name": "AppTopoStrategies"
+  },
+  "controller_module": null,
+  "topodb_module": {
+    "file_path": "",
+    "module_name": "p4utils.utils.topology",
+    "object_name": "Topology"
+  },
+  "mininet_module": {
+    "file_path": "",
+    "module_name": "p4utils.mininetlib.p4net",
+    "object_name": "P4Mininet"
+  },
+  "sflow_module":{
+    "file_path":"./sflow.py"
+  },
+  "topology": {
+    "assignment_strategy": "auto",
+    "auto_arp_tables": "true",
+    "auto_gw_arp": "true",
+    "links": [["s1", "h11",{"bw":0.3}], ["s1", "h12",{"bw":0.3}], ["s1", "s2",{"bw":0.3}], ["s1", "s0",{"bw":0.3}], ["s1", "s6",{"bw":2}], 
+    ["s2", "h21",{"bw":0.3}], ["s2", "h22",{"bw":0.3}], ["s2", "s6",{"bw":0.3}], ["s2", "s3",{"bw":0.3}], 
+    ["s3", "s4",{"bw":0.3}], ["s3", "s7",{"bw":0.3}], ["s3", "h31",{"bw":0.3}], ["s3", "h32",{"bw":0.3}], 
+    ["s4", "s5",{"bw":0.3}], ["s4", "s7",{"bw":0.3}],["s4", "h41",{"bw":0.3}], ["s4", "h42",{"bw":0.3}],
+    ["s5", "s0",{"bw":0.3}], ["s5", "s7",{"bw":0.3}],["s5", "s8",{"bw":0.3}], 
+    ["s0", "s6",{"bw":0.3}], ["s0", "s8",{"bw":0.3}], ["s0", "h01",{"bw":0.3}],
+    ["s6", "s7",{"bw":0.3}], ["s7", "s8",{"bw":0.3}],["s8", "s6",{"bw":0.3}]],
+    "hosts": {
+      
+      "h01": {
+
+      },
+      "h11": {
+
+      },
+      "h12": {
+
+      },
+      "h21": {
+
+        
+      },
+      "h22": {
+
+      },
+      "h31": {
+
+        
+      },
+      "h32": {
+
+      },
+      "h41": {
+
+      },
+      "h42": {
+
+      }
+    },
+    "switches": {
+      "s0": {
+        "cli_input": "s0-commands.txt"
+      },
+      "s1": {
+        "cli_input": "s1-commands.txt"
+      },
+      "s2": {
+        "cli_input": "s2-commands.txt"
+      },
+      "s3": {
+        "cli_input": "s3-commands.txt"
+      },
+      "s4": {
+        "cli_input": "s4-commands.txt"
+      },
+      "s5": {
+        "cli_input": "s5-commands.txt"
+      },
+      "s6": {
+        "cli_input": "s6-commands.txt"
+      },
+      "s7": {
+        "cli_input": "s7-commands.txt"
+      },
+      "s8": {
+        "cli_input": "s8-commands.txt"
+      }
+    }
+  }
+}
