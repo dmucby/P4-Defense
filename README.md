@@ -8,4 +8,4 @@
 
 * SYN Flood Defence ：SYN泛洪攻击防御
 * SYN + ECMP : SYN泛红防御+ECMP负载均衡
-* DDSS ：Dynamic DDoS traffic Scrubbing System
+* DDSS ：Dynamic DDoS traffic Scrubbing System (参考 (Poseidon: Mitigating Volumetric DDoS Attacks with Programmable Switches)[https://www.ndss-symposium.org/ndss-paper/poseidon-mitigating-volumetric-ddos-attacks-with-programmable-switches/])
