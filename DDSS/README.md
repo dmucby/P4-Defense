@@ -6,6 +6,10 @@ The link DDoS attack utilizes traffic flooding to disrupt the connection between
 
 Keywords: Traffic Scrubbing, Moving Target Defense, Link DDoS Attack, P4, programmable data plane
 
+## Project report
+
+[DDSS competition project report (PDF)](../docs/DDSS-project-report.pdf)
+
 ## 系统复现
 
 本系统代码参考并复现了[Poseidon: Mitigating Volumetric DDoS Attacks with Programmable Switches](https://www.ndss-symposium.org/ndss-paper/poseidon-mitigating-volumetric-ddos-attacks-with-programmable-switches/)系统，由于本人能力有限，只复现了P4代码与服务器部分代码，并未涉及原语复现，部分代码功能讲解可查看[SYN Flood防御](https://github.com/dmucby/P4-Defense/tree/master/SYN%20Flood%20Defence)。
