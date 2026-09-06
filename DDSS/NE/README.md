@@ -1,22 +1,24 @@
-# Nash-Equilibrium
+# 纳什均衡
 
-In game theory, the Nash equilibrium is a set of strategies where the following property holds: given each other players' strategies are constant, no player can deviate their strategy for a higher average payout.
+**中文** | [English](README.en.md)
 
-This program can compute pure and mixed strategy Nash equilibria. In pure strategy, each player plays only one move. In mixed strategy, each player can play multiple moves with different probabilities.
+在博弈论中，纳什均衡是一组满足以下性质的策略：当其他参与者的策略保持不变时，任何参与者都无法通过单方面改变自己的策略来获得更高的平均收益。
 
-To run the program, provide an input file as the first argument and a choice of strategy as the second argument. E.g.
+本程序可以计算纯策略和混合策略纳什均衡。在纯策略中，每位参与者只选择一种行动；在混合策略中，每位参与者可以按照不同概率选择多种行动。
+
+运行程序时，将输入文件作为第一个参数，将策略选项作为第二个参数。例如：
 
     python nash_eq.py file.txt -p
 
-`-p` prints the pure strategy Nash equilibria.
-`-m` prints the mixed strategy Nash equilibria.
+`-p` 输出纯策略纳什均衡。
+`-m` 输出混合策略纳什均衡。
 
-Input files have the following format:
+输入文件采用以下格式：
 
     1,1 1,2 1,3
     2,1 2,2 2,3
     3,1 3,2 3,3
 
-Rows represent player 1's moves while columns represent player 2's moves. Each (row, column) pair represents the payouts from the players' corresponding moves. The first value is player 1's payout, the second value is player 2's payout.
+行表示参与者 1 的行动，列表示参与者 2 的行动。每个（行，列）位置上的数值对表示两位参与者采取对应行动时的收益。第一个值是参与者 1 的收益，第二个值是参与者 2 的收益。
 
-This program requires numpy.
+本程序依赖 numpy。
